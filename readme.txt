@@ -1,0 +1,1 @@
+This is the assignment of the ELEC6604 Neural networks, fuzzy systems and genetic algorithms [Section 2A, 2018].
