@@ -16,13 +16,13 @@ figure(1);
     hold on
     plot(Inputs(11:20, 1), Inputs(11:20, 2),'bo');
     hold on
-    x = linspace(-1, 6, 140);
+    x = linspace(-2, 6, 140);
     y = ((-x*cell.w(1))/cell.w(2))+cell.b/cell.w(2);
     plot(x, y);
     ylim([-2,5.5])
     legend('Class 1', 'Class 2', 'Hyper Plain');
-    title('Partition of Scatters');
-    print(gcf,'-dpng','C:\Users\Yunqing\Desktop\SEM2\fuzzy\Assignment1\Nonlinear.png');
+    title('Incorrect-Partition of Scatters');
+    print(gcf,'-dpng','C:\Users\Yunqing\Desktop\SEM2\fuzzy\Assignment1\Nonlinear1.png');
     hold off
    
 figure(2);
@@ -32,8 +32,8 @@ figure(2);
     hold on
     plot(cell.b_revise(1:300), 'b-','LineWidth',0.8);
     legend('w1', 'w2', 'b');
-    title('Convergence of Parameters');
-    print(gcf,'-dpng','C:\Users\Yunqing\Desktop\SEM2\fuzzy\Assignment1\nonConvergence.png');
+    title('Non-Convergence of Parameters');
+    print(gcf,'-dpng','C:\Users\Yunqing\Desktop\SEM2\fuzzy\Assignment1\NonConvergence1.png');
     hold on
     ylim([-0.6 0.8]);
     hold off
