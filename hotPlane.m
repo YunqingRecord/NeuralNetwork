@@ -6,15 +6,16 @@ Inputs = [-0.8,-0.755; -0.781,0.33; -0.63,-0.24; -0.16,-0.44; -0.11,0.55;
 Labels = [1,1,1,1,1,1,1,1,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 Inputs = Inputs';
 Iteration = 2000;
-LearningRate = 0.55;
+LearningRate = 0.155;
 plant = plant.setInfo(Inputs, Labels, LearningRate, Iteration);
 plant = plant.Learning();
 % Test the nerulnetwork and Display in graphics
 %-----------------------------------------------
-[XXX,YYY]=meshgrid(-1.5:0.05:2.5);
+[XXX,YYY]=meshgrid(-1:0.1:2);
 RRR=zeros(size(XXX));
-for x = 1:81
-    for y = 1:81
+
+for x = 1:31
+    for y = 1:31
         % Obtain an input data vector
         I = [ XXX(x,y) YYY(x,y) ];
         % Calculate the output
@@ -27,13 +28,16 @@ for x = 1:81
     end
 end
 
-%plot(Inputs(1, 1:10),Inputs(2, 1:10), 'b*');
+Z1 = [1,1,1,1,1,1,1,1,1,1];
+Z2 = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+figure(1);
+
+plot3(Inputs(1, 1:10),Inputs(2, 1:10, 1),Z1, 'r.');
 hold on
-%plot(Inputs(1, 11:20),Inputs(2, 11:20), 'g*')
+plot3(Inputs(1, 11:20),Inputs(2, 11:20),Z2, 'g.')
 hold on
-%figure,mesh(XXX,YYY,RRR),view(2),colorbar; 
-%hold on
-%surf(XXX,YYY,RRR),view(2),colorbar ;
+mesh(XXX,YYY,RRR),view(2),colorbar; 
 hold on
-W = plant.net.LW{1};
-disp(W);
+surf(XXX,YYY,RRR),view(2),colorbar ;
+shading interp
+hold on
