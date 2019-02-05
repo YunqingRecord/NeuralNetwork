@@ -26,12 +26,12 @@ classdef NN
         end
         
         function obj = Learning(obj)
-            net=newff(minmax(obj.Inputs),obj.Labels, [10 1],{'logsig', 'purelin'}, 'trainlm');
-            net.trainParam.epochs=2000;%允许最大训练步数2000步
-            net.trainParam.goal=0; %训练目标最小误差0.001
-            net.trainParam.show=1; %#ok<*PROP> %每间隔100步显示一次训练结果
-            net.trainParam.lr=5; %学习速率0.05
-            net.divideParam.valRatio = 0/100;
+            net=newff(minmax(obj.Inputs),obj.Labels, [10 2],{'logsig', 'purelin'}, 'trainlm');
+            net.trainParam.epochs=obj.Iteration; % maximum learning step=2000
+            net.trainParam.goal=0; % training goal = 0
+            net.trainParam.show=1; % every single step to plot result
+            net.trainParam.lr=0.005; %learning rate
+            net.divideParam.valRatio = 0/100; %#ok<*PROP>
             net.divideParam.testRatio = 0/100;
             net=train(net,obj.Inputs,obj.Labels);
             obj.net = net;
