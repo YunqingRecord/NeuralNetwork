@@ -28,7 +28,7 @@ y_train = to_categorical(y_train, M_class)  # One Hot the label of the Mnist Ima
 y_test = to_categorical(y_test, M_class)
 
 model = Sequential()   # Another kind of Model is Functional, use Sequential here
-model.add(AveragePooling2D(input_shape=(28, 28, 1), pool_size=(4, 4), strides=(4, 4)))  # average intensity in 4*4 region
+model.add(AveragePooling2D(input_shape=(28, 28, 1), pool_size=4, strides=4))  # average intensity in 4*4 region
 model.add(Flatten())   # transfer 7*7 into 49, one column pixel
 
 # First Hidden Layer
