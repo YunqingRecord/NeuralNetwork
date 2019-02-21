@@ -87,6 +87,9 @@ plt.savefig('C:\\Users\Yunqing\Desktop\SEM2\/fuzzy\Assignment\Accuracy.png')
 plt.show()
 
 plot_model(model, to_file='C:\\Users\Yunqing\Desktop\SEM2\/fuzzy\Assignment\model1.png', show_shapes='True')
+json_string = model.to_json()
+open('./DNN.json', 'w').write(json_string)
+model.save('Mnist.h5')
 
 end = time.time()
-print ("Total Time used by Keras Framework :", end-start)
+print("Total Time used by Keras Framework :", end-start)
