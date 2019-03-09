@@ -1,0 +1,19 @@
+Dear Dr. G. Pang, 
+
+This is Yunqing.
+
+since the HKU moodle can only support the file not bigger than 100MB,
+however the CIFAR-10.npz file is of 177 MB > 100MB, so I push the download address as below, 
+please feel free to download it as you want.
+
+Download Address for CIFAR-10 Dataset:
+
+https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+
+
+
+Thank you !
+
+
+Best, 
+Yunqing
